@@ -1,0 +1,20 @@
+#top-div{
+  color: black;
+  /* text-align: center; */
+  text-shadow: 2px 2px 5px green;
+}
+#second-lorem{
+  color: black;
+  text-align: right;
+  text-shadow: 2px 2px 5px blue;
+}
+
+h1 {
+  color: green;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

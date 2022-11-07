@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title> An HTML Example </title>
+    <meta content="Example Programming">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <nav>
+      <div class="blue lighten-2 nav-wrapper">
+        <a href="#" class="brand-logo">Example Site</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">First Page</a></li>
+          <li><a href="second.html">Second Page</a></li>
+          <li><a href="die.html">Die Roller</a></li>
+          <li><a href="http://www.google.com">Google</a></li>
+        </ul>
+      </div>
+    </nav>
+  </head>
+  <body id="main-body">
+    <div class="center-align">
+      <h2> Pang: The Useless Pong </h2>
+      <p>
+        <button class="btn-small" id="pause_button">Play/Pause</button>
+        <h5 id="scores">Player: 0 AI: 0</h5>
+      </p>
+      <canvas id="screen" width="640" height="480" style="border:1px solid #000000;"></canvas>
+      <script src="game.js"></script>
+    </div>
+  </body>
+</html>
