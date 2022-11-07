@@ -30,7 +30,7 @@ var ai_paddle = {
   y: 240,
   width: 10,
   height: 50,
-  speed: 10,
+  speed: 8,
 }
 
 var ai_tol = 0;
@@ -41,8 +41,8 @@ var pong_ball = {
   y: 240,
   width: 10,
   height: 10,
-  dx: 7,
-  dy: 7
+  dx: 5,
+  dy: 5
 }
 
 // Misc. Functions
@@ -93,6 +93,7 @@ function update_ball(ball){
     overlap_max = Math.min(pong_ball.y+pong_ball.height,
                            player_paddle.y+player_paddle.height);
     if(overlap_max > overlap_min){
+      pong_ball.x = player_paddle.x+player_paddle.width+1;
       pong_ball.dx = -pong_ball.dx;
       return;
     }
@@ -103,17 +104,18 @@ function update_ball(ball){
     overlap_max = Math.min(pong_ball.y+pong_ball.height,
                            ai_paddle.y+ai_paddle.height);
     if(overlap_max > overlap_min){
+      pong_ball.x = ai_paddle.x - pong_ball.width - 1;
       pong_ball.dx = -pong_ball.dx;
       return;
     }
   }
 
   // Test hitting the end zones of the canvas
-  if(pong_ball.x <= 10){
+  if(pong_ball.x <= 15){
     scores.ai += 1;
     reset_ball(pong_ball);
   }
-  else if(pong_ball.x+pong_ball.width >= canvas.width-10){
+  else if(pong_ball.x+pong_ball.width >= canvas.width-15){
     scores.player += 1;
     reset_ball(pong_ball);
     pong_ball.dx = -pong_ball.dx;
@@ -167,10 +169,10 @@ setInterval(update, 33);
 function update(){
   if(pause)return;
   // Update player paddle
-  if(key_held == "w"){
+  if(key_held == "ArrowUp" || key_held == "w"){
     player_paddle.y -= player_paddle.speed;
   }
-  else if(key_held == "s"){
+  else if(key_held == "ArrowDown" || key_held == "s"){
     player_paddle.y += player_paddle.speed;
   }
   // Update ball
