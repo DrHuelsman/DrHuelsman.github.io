@@ -26,7 +26,7 @@ var player_paddle = {
 
 
 var ai_paddle = {
-  x: 620,
+  x: 610,
   y: 240,
   width: 10,
   height: 50,
@@ -192,4 +192,4 @@ document.addEventListener("keyup", function (event){
   key_held = "";
 });
 
-update();
+drawScreen();
